@@ -66,7 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const { error: profileError } = await supabase
       .from('profiles')
-      .insert([{ id: user.id, name, plan, subscription_status: 'inactive' }]);
+      .insert([{ id: user.id, name, plan, subscription_status: 'inactive', lessons_remaining: 3 }]);
 
     if (profileError) return { user: null, error: profileError };
 
